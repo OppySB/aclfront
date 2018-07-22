@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import Signin from '../Forms/Signin';
-import ReactDOM from 'react-dom';
+import Menu from '../Menu/Menu';
+import Header from '../Header/Header';
 
+/**
+ * Handle all the page
+ */
 class App extends Component {
   render() {
     return (
-      <Signin />
+      <Menu />
     );
   }
 }
