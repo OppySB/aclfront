@@ -9,7 +9,11 @@ import Header from '../Header/Header';
 class App extends Component {
   render() {
     return (
-      <Menu />
+      <div>
+        <Menu />
+        <Header />
+      </div>
+     
     );
   }
 }
