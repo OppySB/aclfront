@@ -16,14 +16,14 @@ var now = new Date();
 var items = [
   {
    _id            :guid(),
-    name          : 'Meeting , dev staff!',
+    name          : 'Guy',
     startDateTime : new Date(now.getFullYear(), now.getMonth(), now.getDate(), 10, 0),
     endDateTime   : new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 0),
     classes       : 'color-1'
   },
   {
    _id            :guid(),
-    name          : 'Working lunch , Holly',
+    name          : 'Alain',
     startDateTime : new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, 11, 0),
     endDateTime   : new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, 13, 0),
     classes       : 'color-2 color-3'
@@ -37,11 +37,11 @@ class Agenda extends React.Component {
     this.state = {
       items:items,
       selected:[],
-      cellHeight:30,
+      cellHeight:10,
       showModal:false,
       locale:"fr",
-      rowsPerHour:2,
-      numberOfDays:4,
+      rowsPerHour:1,
+      numberOfDays:7,
       startDate: new Date()
     }
     this.handleCellSelection = this.handleCellSelection.bind(this)
@@ -49,14 +49,102 @@ class Agenda extends React.Component {
     this.handleRangeSelection = this.handleRangeSelection.bind(this)
   }
 
-handleCellSelection(item){
-  console.log('handleCellSelection',item)
+  componentDidMount(){
+
+    this.setState({items:items})
+
+
+  }
+
+
+componentWillReceiveProps(next , last){
+  if(next.items){
+
+    this.setState({items:next.items})
+  }
 }
-handleItemEdit(item){
-  console.log('handleItemEdit', item)
+  handleItemEdit(item, openModal) {
+
+    if(item && openModal === true){
+      this.setState({selected:[item] })
+      return this.setState({showModal:true});
+    }
+
+
+
+  }
+  handleCellSelection(item, openModal) {
+
+    if(this.state.selected && this.state.selected[0] === item){
+      return  this._openModal();
+    }
+       this.setState({selected:[item] })
+
+  }
+
+  zoomIn(){
+var num = this.state.cellHeight + 15
+    this.setState({cellHeight:num})
+  }
+  zoomOut(){
+var num = this.state.cellHeight - 15
+    this.setState({cellHeight:num})
+  }
+
+
+  handleDateRangeChange (startDate, endDate) {
+      this.setState({startDate:startDate })
+
+  }
+
+  handleRangeSelection (selected) {
+
+
+this.setState({selected:selected , showCtrl:true})
+this._openModal();
+
 }
-handleRangeSelection(item){
-  console.log('handleRangeSelection', item)
+
+_openModal(){
+  this.setState({showModal:true})
+}
+_closeModal(e){
+  if(e){
+    e.stopPropagation();
+    e.preventDefault();
+  }
+    this.setState({showModal:false})
+}
+
+handleItemChange(items , item){
+
+this.setState({items:items})
+}
+
+handleItemSize(items , item){
+
+  this.setState({items:items})
+
+}
+
+removeEvent(items , item){
+
+    this.setState({ items:items});
+}
+
+addNewEvent (items , newItems){
+
+  this.setState({showModal:false ,selected:[] , items:items});
+  this._closeModal();
+}
+editEvent (items , item){
+
+  this.setState({showModal:false ,selected:[] , items:items});
+  this._closeModal();
+}
+
+changeView (days , event ){
+this.setState({numberOfDays:days})
 }
   render() {
     return (
@@ -76,7 +164,10 @@ handleRangeSelection(item){
           fixedHeader={true}
           onItemEdit={this.handleItemEdit.bind(this)}
           onCellSelect={this.handleCellSelection.bind(this)}
-          onRangeSelection={this.handleRangeSelection.bind(this)}/>
+          onRangeSelection={this.handleRangeSelection.bind(this)}
+          Addnew={this.addNewEvent}
+          edit={this.editEvent}
+          />
       </div>
     );
   }
