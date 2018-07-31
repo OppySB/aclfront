@@ -71,11 +71,11 @@ export default class Agenda extends Component {
 this.state = {
   items:[],
   selected:[],
-  cellHeight:(60 / 4),
+  cellHeight:(20 / 4),
   showModal:false,
   locale:"fr",
-  rowsPerHour:4,
-  numberOfDays:4,
+  rowsPerHour:2,
+  numberOfDays:7,
   startDate: new Date()
 }
 this.handleRangeSelection = this.handleRangeSelection.bind(this)
@@ -215,7 +215,7 @@ this.setState({numberOfDays:days})
           minDate={new Date(now.getFullYear(), now.getMonth()-3)}
           maxDate={new Date(now.getFullYear(), now.getMonth()+3)}
           startDate={this.state.startDate}
-          startAtTime={10}
+          startAtTime={9}
           cellHeight={this.state.cellHeight}
           locale="fr"
           items={this.state.items}
