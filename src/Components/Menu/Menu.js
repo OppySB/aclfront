@@ -23,31 +23,31 @@ class Menu extends Component {
   render() { 
     return (
     <Router>
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-            <div class="container">
+        <nav className="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div className="container">
                 <img className="mb-4" src={logo} alt="" width="72" height="72" />
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                  <ul class="navbar-nav ml-auto">
-                      <li class="nav-item">
-                        <Link to="/" class="nav-link js-scroll-trigger">Accueil</Link>
+                <div className="collapse navbar-collapse" id="navbarResponsive">
+                  <ul className="navbar-nav ml-auto">
+                      <li className="nav-item">
+                        <Link to="/" className="nav-link js-scroll-trigger">Accueil</Link>
                       </li>
-                      <li class="nav-item">
-                        <Link to="/association" class="nav-link js-scroll-trigger" >Association</Link>
+                      <li className="nav-item">
+                        <Link to="/association" className="nav-link js-scroll-trigger" >Association</Link>
                       </li>
-                      <li class="nav-item">
-                        <Link to="/inscriptions" class="nav-link js-scroll-trigger" >Inscription</Link>
+                      <li className="nav-item">
+                        <Link to="/inscriptions" className="nav-link js-scroll-trigger" >Inscription</Link>
                       </li>
-                      <li class="nav-item">
-                        <Link to="/photos" class="nav-link js-scroll-trigger" >Photo</Link>
+                      <li className="nav-item">
+                        <Link to="/photos" className="nav-link js-scroll-trigger" >Photo</Link>
                       </li>
-                      <li class="nav-item">
-                        <Link to="/contact" class="nav-link js-scroll-trigger" >Contact</Link>
+                      <li className="nav-item">
+                        <Link to="/contact" className="nav-link js-scroll-trigger" >Contact</Link>
                       </li>
-                      <li class="nav-item">
-                        <Link to="/connexion" class="nav-link js-scroll-trigger" >Connexion</Link>
+                      <li className="nav-item">
+                        <Link to="/connexion" className="nav-link js-scroll-trigger" >Connexion</Link>
                       </li>
                   </ul>
 
