@@ -8,7 +8,9 @@
     text-align: center;
   }
 
-
+.white-bg{
+  background-color: white;
+}
   .content-expanded {
       height: 100vh;
       overflow: hidden;

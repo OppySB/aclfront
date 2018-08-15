@@ -199,7 +199,7 @@ this.setState({numberOfDays:days})
     }
     return (
 
-      <div className="content-expanded ">
+      <div className="content-expanded white-bg">
 
         <div className="control-buttons">
           <button  className="button-control" onClick={this.zoomIn}> <i className="zoom-plus-icon"></i> </button>
