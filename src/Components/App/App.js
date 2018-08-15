@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
         <Router>
-        <nav >
+        <nav>
           <div className="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div className="container">
                   <img className="mb-4" src={logo} alt="" width="72" height="72" />
@@ -27,7 +27,7 @@ class App extends Component {
                   </button>
                   <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav ml-auto">
-                        <li className="nav-item">
+                        <li className="nav-item  ">
                           <Link to="/" className="nav-link js-scroll-trigger">Accueil</Link>
                         </li>
                         <li className="nav-item">
