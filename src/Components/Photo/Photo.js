@@ -83,7 +83,7 @@ class Photo extends Component {
       </a>
     </div>
     <div clasclassNames="col-lg-4 col-sm-6">
-              <a className="portfolio-box" href="img/portfolio/thumbnails/s1.jpg">
+              <a className="portfolio-box" href="img/portfolio/thumbnails/s1.jpg"uti>
                 <img className="img-fluid" src="img/portfolio/thumbnails/s2.jpg" alt="" />
                 <div className="portfolio-box-caption">
                   <div className="portfolio-box-caption-content">

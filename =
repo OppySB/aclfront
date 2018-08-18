@@ -1,0 +1,2 @@
+ZSH_THEME="powerlevel9k/powerlevel9k"
+plugins=(zsh-autosuggestions)
