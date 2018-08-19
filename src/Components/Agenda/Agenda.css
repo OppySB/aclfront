@@ -16,9 +16,6 @@
       overflow: hidden;
   }
 
-
-
-
   .zoom-plus-icon{
     background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4IiB3aWR0aD0iNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTI2IDE0aC00djhoLTh2NGg4djhoNHYtOGg4di00aC04di04em0tMi0xMGMtMTEuMDMgMC0yMCA4Ljk3LTIwIDIwczguOTcgMjAgMjAgMjAgMjAtOC45NyAyMC0yMC04Ljk3LTIwLTIwLTIwem0wIDM2Yy04LjgyIDAtMTYtNy4xOC0xNi0xNnM3LjE4LTE2IDE2LTE2IDE2IDcuMTggMTYgMTYtNy4xOCAxNi0xNiAxNnoiLz48cGF0aCBkPSJNMCAwaDQ4djQ4aC00OHoiIGZpbGw9Im5vbmUiLz48L3N2Zz4=)no-repeat ;
     display: block;
@@ -115,16 +112,18 @@
 
   .agenda-item-description section {
     font-size: 12px;
+    padding: 0;
   }
 
   .agenda-item-description small {
     color:#ff0000;
     font-size: 12px;
+    display: none; /* à rajouter pour partie admin*/
   }
 
 
   .agenda-controls-item {
-      display: flex;
+      display: none;
       flex-direction: row;
       align-items: center;
       justify-content: center;
