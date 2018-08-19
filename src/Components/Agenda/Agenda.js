@@ -1,7 +1,6 @@
 // @flow
 import React, { Component } from 'react';
-import moment from 'moment';
-import { ReactAgenda, ReactAgendaCtrl, guid, getUnique, getLast, getFirst, Modal } from 'react-agenda';
+import { ReactAgenda, ReactAgendaCtrl, guid, Modal } from 'react-agenda';
 import './Agenda.css';
 
 require('dotenv').config()
@@ -47,6 +46,9 @@ export default class Agenda extends Component {
 
   }
 
+  /**
+   * Load data when page loads
+   */
   componentDidMount() {
     /**
      * fetch the slots from backend
@@ -54,9 +56,7 @@ export default class Agenda extends Component {
     fetch(process.env.REACT_APP_API_URL_SLOTS)
       .then((Response) => Response.json())
       .then((findSlots) => {
-              console.log(findSlots);
         this.setState({
-
           items: this.formatItemFromJsonResponse(findSlots)
         })
       }
@@ -181,11 +181,6 @@ export default class Agenda extends Component {
 
 
   render() {
-
-    var AgendaItem = function (props) {
-      console.log(' item component props', props)
-      return <div style={{ display: 'block', position: 'absolute', background: '#FFF' }}>{props.item.name} <button onClick={() => props.edit(props.item)}>Edit </button></div>
-    }
     return (
 
       <div className="content-expanded white-bg">
